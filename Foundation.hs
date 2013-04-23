@@ -22,6 +22,10 @@ import Text.Hamlet (hamletFile)
 import System.Log.FastLogger (Logger)
 import Data.Text
 
+-- to use Html into forms
+import Yesod.Form.Nic (YesodNic)
+
+
 -- | The site argument for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
 -- starts running, such as database connections. Every handler will have
@@ -155,6 +159,8 @@ instance YesodAuth App where
 -- achieve customized and internationalized form validation messages.
 instance RenderMessage App FormMessage where
     renderMessage _ _ = defaultFormMessage
+
+instance YesodNic App
 
 -- | Get the 'Extra' value, used to hold data from the settings.yml file.
 getExtra :: Handler Extra

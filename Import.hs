@@ -12,3 +12,7 @@ import           Settings             as Import
 import           Settings.Development as Import
 import           Settings.StaticFiles as Import
 import           Data.Monoid          as Import (Monoid (mappend, mempty, mconcat), (<>))
+
+-- to use Html into forms
+import Yesod.Form.Nic  as Import (YesodNic, nicHtmlField)
+
